@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get("/demo", function(){
     echo "Hello world";
 });
+
+Route::post("/test", function()
+    {
+        echo "testing post method";    
+    });
