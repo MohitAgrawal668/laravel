@@ -17,9 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/demo", function(){
-    echo "Hello world";
-});
 
 Route::post("/test", function()
     {
@@ -29,8 +26,8 @@ Route::any("/testany", function(){
         echo "testing the route";
 });
 
-Route::get("/demo",function(){
-    return view("demo");
+Route::get("/demo/{name}",function($name){
+    echo $name;
 });
 
 
