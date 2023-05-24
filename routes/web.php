@@ -27,7 +27,8 @@ Route::any("/testany", function(){
 });
 
 Route::get("/demo/{name}/{id?}",function($name, $id = null){
-    echo $name." ".$id;
+    $data = compact('name','id');
+    return view("demo")->with($data);
 });
 
 
