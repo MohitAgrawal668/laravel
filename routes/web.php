@@ -25,3 +25,6 @@ Route::post("/test", function()
     {
         echo "testing post method";    
     });
+Route::any("/testany", function(){
+        echo "testing the route";
+});
