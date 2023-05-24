@@ -26,8 +26,8 @@ Route::any("/testany", function(){
         echo "testing the route";
 });
 
-Route::get("/demo/{name}",function($name){
-    echo $name;
+Route::get("/demo/{name}/{id?}",function($name, $id = null){
+    echo $name." ".$id;
 });
 
 
