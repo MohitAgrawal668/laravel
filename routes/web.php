@@ -28,3 +28,7 @@ Route::post("/test", function()
 Route::any("/testany", function(){
         echo "testing the route";
 });
+
+Route::get("/demo",function(){
+    return view("demo");
+});
