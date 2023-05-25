@@ -17,7 +17,7 @@
             @if($a==2)
                 @continue
             @endif
-
+            {{-- if $a equls to 5 break the loop --}}
             @if($a==5)
                 @break
             @endif
