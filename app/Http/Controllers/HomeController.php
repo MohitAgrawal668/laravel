@@ -18,8 +18,8 @@ class HomeController extends Controller
         {
             return view("form");    
         } 
-    public function register()
+    public function register(Request $request)
         {
-            
+            print_r($request->all());
         }          
 }
