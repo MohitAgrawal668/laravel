@@ -20,6 +20,12 @@ class HomeController extends Controller
         } 
     public function register(Request $request)
         {
+            $request->validate([
+                "name" => "required",
+                "email" => "required",
+                "password" => "required",
+                "confirm-password" => "required",
+            ]);
             print_r($request->all());
         }          
 }

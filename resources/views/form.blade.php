@@ -23,6 +23,11 @@
             <input type="text" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
             <small id="helpId" class="text-muted"></small>
         </div>
+        <div class="form-group">
+            <label for="">Confirm Password</label>
+            <input type="text" name="confirm-password" id="confirm-password" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted"></small>
+        </div>
         <button type="submit" class="btn btn-primary" name="">Submit</button>  
     </form>
 @endsection
