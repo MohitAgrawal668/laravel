@@ -22,3 +22,7 @@ Route::get("/about", [HomeController::class, 'about']);
 Route::get("/contact",SingleActionController::class);
 
 Route::resource("photo", PhotoController::class);
+
+Route::get("/register", [HomeController::class, 'form']);
+
+Route::post("/register", [HomeController::class, 'register']);
