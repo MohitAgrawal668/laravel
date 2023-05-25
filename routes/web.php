@@ -28,7 +28,8 @@ Route::get("/demo/{name}/{id?}",function($name, $id = null){
 });
 
 Route::get("/{name?}",function($name = null){
-    $data = compact('name');
+    $demo = "<h2>Nivi</h2>";
+    $data = compact('name', 'demo');
     return view('home')->with($data);
 });
 
