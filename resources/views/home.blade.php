@@ -14,6 +14,14 @@
             $array = [1,2,3,4,5,6,7];
         @endphp
         @foreach($array as $a)
+            @if($a==2)
+                @continue
+            @endif
+
+            @if($a==5)
+                @break
+            @endif
+
             <h4>{{$a}}</h4>        
         @endforeach
     <!-- Optional JavaScript -->
