@@ -14,23 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post("/test", function()
-    {
-        echo "testing post method";    
+Route::get("/",function(){
+        return view("home");
     });
-Route::any("/testany", function(){
-        echo "testing the route";
+
+Route::get("/about",function(){
+    return view("about");
 });
 
-Route::get("/demo/{name}/{id?}",function($name, $id = null){
-    $data = compact('name','id');
-    return view("demo")->with($data);
+Route::get("/contact", function(){
+    return view("contact");
 });
-
-Route::get("/{name?}",function($name = null){
-    $demo = "<h2>Nivi</h2>";
-    $data = compact('name', 'demo');
-    return view('home')->with($data);
-});
-
-
