@@ -11,12 +11,11 @@
   </head>
   <body>
         @php
-            $i=1;   
+            $array = [1,2,3,4,5,6,7];
         @endphp
-        @while($i<10)
-            <h1>{{$i}}</h1>
-            @php $i++; @endphp
-        @endwhile
+        @foreach($array as $a)
+            <h4>{{$a}}</h4>        
+        @endforeach
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
