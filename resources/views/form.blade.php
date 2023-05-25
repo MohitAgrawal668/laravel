@@ -8,7 +8,7 @@
         <h1>Form example</h1>
         <div class="form-group">
           <label for="">Name</label>
-          <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
+          <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId" value="{{old("name")}}">
           <small id="helpId" class="text-danger">
             @error("name")
                 {{ $message }}
@@ -18,7 +18,7 @@
         
         <div class="form-group">
             <label for="">Email</label>
-            <input type="text" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+            <input type="text" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId" value="{{old("email")}}">
             <small id="helpId" class="text-danger">
                 @error("email")
                     {{ $message }}
