@@ -22,9 +22,9 @@ class HomeController extends Controller
         {
             $request->validate([
                 "name" => "required",
-                "email" => "required",
+                "email" => "required|email",
                 "password" => "required",
-                "confirm-password" => "required",
+                "confirm-password" => "required|same:password",
             ]);
             print_r($request->all());
         }          
