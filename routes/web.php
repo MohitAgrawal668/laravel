@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PhotoController;
@@ -28,7 +29,6 @@ Route::get("/register", [HomeController::class, 'form']);
 
 Route::post("/register", [HomeController::class, 'register']);
 
-Route::get("/customer",function(){
-    $customers = Customers::all()->toArray();
-    print_r($customers);
-});
+Route::get("/customer",[CustomerController::class,"index"]);
+
+Route::post("/customer",[CustomerController::class,"store"]);
