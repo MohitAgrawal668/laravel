@@ -30,5 +30,14 @@ class CustomerController extends Controller
             $customer->dob = "2022-02-01";
             $customer->gender = "M";
             $customer->save();
+
+            return redirect("/customer/view");
+        }    
+     
+    public function view()
+        {
+            $customers = Customers::all();
+            $data = compact("customers");
+            return view("customer_view")->with($data);
         }    
 }
