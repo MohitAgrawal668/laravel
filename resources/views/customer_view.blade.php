@@ -31,7 +31,7 @@
                         @endif    
                     </td>
                     <td>
-                        <a href="{{url('/customer/delete/')}}/{{$customer->id}}"><button class="btn btn-danger">Delete</button></a>
+                        <a href="{{ route('customer.delete', ['id' => $customer->id ]) }}"><button class="btn btn-danger">Delete</button></a>
                     </td>
                 </tr>
             @endforeach
