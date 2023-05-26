@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\SingleActionController;
+use App\Models\Customers;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,8 @@ Route::resource("photo", PhotoController::class);
 Route::get("/register", [HomeController::class, 'form']);
 
 Route::post("/register", [HomeController::class, 'register']);
+
+Route::get("/customer",function(){
+    $customers = Customers::all()->toArray();
+    print_r($customers);
+});
