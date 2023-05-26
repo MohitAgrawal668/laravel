@@ -3,23 +3,23 @@
     <title>Register Customer</title>
 @endpush
 @section('main-section')
-    <form action="{{url('/')}}/customer/" method="post">
+    <form action="{{ $url }}" method="post">
         @csrf
-        <h1>Register Your Self</h1>
+        <h1>{{ $title }}</h1>
         <div class="row">
-            <x-input type="text" name="name" label="Your Name" value="{{old('name')}}"/>
+            <x-input type="text" name="name" label="Your Name" value="{{@$customer->name}}"/>
             <small id="helpId" class="text-muted">
                 @error("name")
                    {{ $message }}
                 @enderror
            </small>
-            <x-input type="email" name="email" label="Your Email" value="{{old('email')}}"/>
+            <x-input type="email" name="email" label="Your Email" value="{{@$customer->email}}"/>
             <small id="helpId" class="text-muted">
                 @error("email")
                    {{ $message }}
                 @enderror
            </small>
-            <x-input type="text" name="mobile" label="Your Mobile" value="{{old('mobile')}}"/>
+            <x-input type="text" name="mobile" label="Your Mobile" value="{{@$customer->mobile}}"/>
             <small id="helpId" class="text-muted">
                 @error("mobile")
                    {{ $message }}
@@ -40,7 +40,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="">Your Address</label>
-                    <textarea name="address" id="" cols="30" rows="2" class="form-control">{{old('address')}}</textarea>
+                    <textarea name="address" id="" cols="30" rows="2" class="form-control">{{ @$customer->address }}</textarea>
                     <small id="helpId" class="text-muted">
                          @error("address")
                             {{ $message }}

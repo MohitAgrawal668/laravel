@@ -9,7 +9,9 @@ class CustomerController extends Controller
 {
     public function index()
         {
-            return view("create_customer");
+            $title = "Register New Customer";
+            $url = url("customer");
+            return view("create_customer")->with(compact('title','url'));
         }
     public function store(Request $request)
         {   
@@ -48,5 +50,34 @@ class CustomerController extends Controller
                     $customer->delete();    
                 }    
             return redirect("/customer/view");    
-        }      
+        }
+    public function edit($id)
+        {
+            $customer = Customers::find($id);
+            $title = "Update Customer Detail";
+            $url = url("customer/update/$id");
+            if(is_null($customer))
+                {
+                    return redirect("/customer/view");    
+                }
+            else
+                {
+                    $data = compact('customer','url','title');
+                    return view("create_customer")->with($data);
+                }        
+        } 
+        public function update($id, Request $request)
+        {   
+            
+            $customer = Customers::find($id);
+            $customer->name = $request['name'];
+            $customer->email = $request['email'];
+            $customer->mobile = $request['mobile'];
+            $customer->address = $request['address'];
+            $customer->dob = "2022-02-01";
+            $customer->gender = "M";
+            $customer->save();
+
+            return redirect("/customer/view");
+        }             
 }

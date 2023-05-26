@@ -32,6 +32,7 @@
                     </td>
                     <td>
                         <a href="{{ route('customer.delete', ['id' => $customer->id ]) }}"><button class="btn btn-danger">Delete</button></a>
+                        <a href="{{ route('customer.edit', ['id' => $customer->id ]) }}"><button class="btn btn-info">Edit</button></a>
                     </td>
                 </tr>
             @endforeach
