@@ -29,8 +29,8 @@ Route::get("/register", [HomeController::class, 'form']);
 
 Route::post("/register", [HomeController::class, 'register']);
 
-Route::get("/customer",[CustomerController::class,"index"]);
+Route::get("/customer",[CustomerController::class,"index"])->name("customer.create");
 
 Route::post("/customer",[CustomerController::class,"store"]);
 
-Route::get("/customer/view",[CustomerController::class, "view"]);
+Route::get("/customer/view",[CustomerController::class, "view"])->name("customer.view");
