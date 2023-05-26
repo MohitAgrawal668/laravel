@@ -34,3 +34,5 @@ Route::get("/customer",[CustomerController::class,"index"])->name("customer.crea
 Route::post("/customer",[CustomerController::class,"store"]);
 
 Route::get("/customer/view",[CustomerController::class, "view"])->name("customer.view");
+
+Route::get("/customer/delete/{id}",[CustomerController::class, "delete"])->name("customer.delete");

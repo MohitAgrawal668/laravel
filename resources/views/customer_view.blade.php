@@ -31,7 +31,7 @@
                         @endif    
                     </td>
                     <td>
-                        <button class="btn btn-danger">Delete</button>
+                        <a href="{{url('/customer/delete/')}}/{{$customer->id}}"><button class="btn btn-danger">Delete</button></a>
                     </td>
                 </tr>
             @endforeach
