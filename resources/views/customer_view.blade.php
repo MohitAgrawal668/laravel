@@ -11,6 +11,8 @@
                 <th>Mobile</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>Status</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +23,16 @@
                     <td>{{ $customer->mobile }}</td>
                     <td>{{ $customer->email }}</td>
                     <td>{{ $customer->address }}</td>
+                    <td>
+                        @if($customer->status==1)
+                            <a href="#"><span class='badge badge-success'>Active</span></a>
+                        @else
+                            <a href="#"><span class='badge badge-danger'>Inactive</span></a>
+                        @endif    
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
