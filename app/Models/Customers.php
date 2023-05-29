@@ -16,4 +16,10 @@ class Customers extends Model
         {
             $this->attributes['name'] = ucwords($value);
         }
+
+    //set accessor
+    public function getDobAttribute($date)
+        {       
+             return date("d M, Y", strtotime($date));   
+        }
 }

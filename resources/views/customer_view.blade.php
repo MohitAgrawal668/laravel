@@ -23,7 +23,7 @@
                     <td scope="row">{{ $customer->name }}</td>
                     <td>{{ $customer->mobile }}</td>
                     <td>{{ $customer->email }}</td>
-                    <td>{{ get_formatted_date($customer->dob, 'd M, Y') }}</td>
+                    <td>{{ $customer->dob }}</td>
                     <td>{{ $customer->address }}</td>
                     <td>
                         @if($customer->status==1)
