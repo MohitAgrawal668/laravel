@@ -29,7 +29,7 @@ class CustomerController extends Controller
             $customer->mobile = $request['mobile'];
             $customer->password = md5($request['password']);
             $customer->address = $request['address'];
-            $customer->dob = "2022-02-01";
+            $customer->dob = $request['dob'];
             $customer->gender = "M";
             $customer->save();
 
@@ -74,7 +74,7 @@ class CustomerController extends Controller
             $customer->email = $request['email'];
             $customer->mobile = $request['mobile'];
             $customer->address = $request['address'];
-            $customer->dob = "2022-02-01";
+            $customer->dob = $request['dob'];
             $customer->gender = "M";
             $customer->save();
 

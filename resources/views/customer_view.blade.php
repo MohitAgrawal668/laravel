@@ -10,6 +10,7 @@
                 <th>Name</th>
                 <th>Mobile</th>
                 <th>Email</th>
+                <th>DOB</th>
                 <th>Address</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -22,6 +23,7 @@
                     <td scope="row">{{ $customer->name }}</td>
                     <td>{{ $customer->mobile }}</td>
                     <td>{{ $customer->email }}</td>
+                    <td>{{ get_formatted_date($customer->dob, 'd M, Y') }}</td>
                     <td>{{ $customer->address }}</td>
                     <td>
                         @if($customer->status==1)

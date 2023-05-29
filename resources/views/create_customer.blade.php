@@ -25,6 +25,10 @@
                    {{ $message }}
                 @enderror
            </small>
+
+           <x-input type="date" name="dob" label="Your DOB" value="{{@$customer->dob}}"/>
+            
+
             <x-input type="password" name="password" label="Your Password"/>
             <small id="helpId" class="text-muted">
                 @error("password")
