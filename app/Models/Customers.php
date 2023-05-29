@@ -10,4 +10,10 @@ class Customers extends Model
     use HasFactory;
     protected $table = "customers";
     protected $primaryKey = "id";
+
+    //set an accessor
+    public function setNameAttribute($value)
+        {
+            $this->attributes['name'] = ucwords($value);
+        }
 }
