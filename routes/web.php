@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\SingleActionController;
 use App\Models\Customers;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,21 @@ Route::get("/customer/view",[CustomerController::class, "view"])->name("customer
 Route::get("/customer/delete/{id}",[CustomerController::class, "delete"])->name("customer.delete");
 Route::post("/customer/update/{id}",[CustomerController::class, "update"])->name("customer.update");
 Route::get("/customer/edit/{id}",[CustomerController::class, "edit"])->name("customer.edit");
+
+Route::get("get-all-session",function(){
+    print_r(session()->all());
+});
+
+Route::get("set-session",function(Request $request){
+    $request->session()->put('user_name',"Mohit Agrawal");
+    $request->session()->put('user_id','9087');
+
+    return redirect("get-all-session");
+});
+
+Route::get("destroy-session",function()
+    {
+        session()->forget('user_name');
+        session()->forget('user_id');
+        return redirect("get-all-session");
+    });
