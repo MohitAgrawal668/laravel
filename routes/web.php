@@ -38,6 +38,7 @@ Route::get("/customer/view",[CustomerController::class, "view"])->name("customer
 Route::get("/customer/trash",[CustomerController::class, "trash"])->name("customer.trash");
 
 Route::get("/customer/delete/{id}",[CustomerController::class, "delete"])->name("customer.delete");
+Route::get("/customer/force-elete/{id}",[CustomerController::class, "forceDelete"])->name("customer.force_delete");
 Route::post("/customer/update/{id}",[CustomerController::class, "update"])->name("customer.update");
 Route::get("/customer/edit/{id}",[CustomerController::class, "edit"])->name("customer.edit");
 

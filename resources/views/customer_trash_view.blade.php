@@ -34,7 +34,7 @@
                         @endif    
                     </td>
                     <td>
-                        <a href="{{ route('customer.delete', ['id' => $customer->id ]) }}"><button class="btn btn-danger">Delete</button></a>
+                        <a href="{{ route('customer.force_delete', ['id' => $customer->id ]) }}"><button class="btn btn-danger">Delete</button></a>
                         <a href="{{ route('customer.restore', ['id' => $customer->id ]) }}"><button class="btn btn-info">Restore</button></a>
                     </td>
                 </tr>

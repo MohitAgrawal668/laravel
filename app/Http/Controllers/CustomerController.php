@@ -59,6 +59,17 @@ class CustomerController extends Controller
                 }    
             return redirect("/customer/view");    
         }
+
+    public function forceDelete($id)
+        {
+            $customer = Customers::withTrashed()->find($id);
+            if(!is_null($customer))
+                {
+                    $customer->forceDelete();   
+                }    
+            return redirect("/customer/trash");    
+        }    
+
     public function restore($id)
         {
             $customer = Customers::withTrashed()->find($id);
