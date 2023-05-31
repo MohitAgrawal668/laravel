@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Customers;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class CustomerSeeder extends Seeder
 {
@@ -13,14 +14,17 @@ class CustomerSeeder extends Seeder
      */
     public function run(): void
     {
-        $customer = new Customers();
-        $customer->name = 'Mohit';
-        $customer->email = 'agrawalm668@gmail.com';
-        $customer->mobile = '9084804762';
-        $customer->password = md5('123456');
-        $customer->address = 'Mathura';
-        $customer->dob = now();
-        $customer->gender = "M";
-        $customer->save();
+        $faker = Faker::create();
+        for($i=0;$i<100;$i++) {
+            $customer = new Customers();
+            $customer->name = $faker->name;
+            $customer->email = $faker->email;
+            $customer->mobile = $faker->phoneNumber;
+            $customer->password = $faker->password;
+            $customer->address = $faker->address;
+            $customer->dob = $faker->date;
+            $customer->gender = "M";
+            $customer->save();
+        }
     }
 }
