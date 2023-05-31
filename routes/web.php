@@ -1,6 +1,16 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
+
+use App\Http\Controllers\frontend\AboutController as FrontendAboutController;
+
+use App\Http\Controllers\frontend\ContactController as FrontendContactController;
+
+use App\Http\Controllers\frontend\ServicesController as FrontendServicesController;
+use App\Http\Controllers\frontend\ArticleController as FrontendArticleController;
+use App\Http\Controllers\frontend\EventController as FrontendEventController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PhotoController;
@@ -20,7 +30,7 @@ use Illuminate\Http\Request;
 */
 
 
-Route::get("/",[HomeController::class, 'index']);
+/*Route::get("/",[HomeController::class, 'index']);
 Route::get("/about", [HomeController::class, 'about']);
 Route::get("/contact",SingleActionController::class);
 
@@ -60,4 +70,11 @@ Route::get("destroy-session",function()
         session()->forget('user_name');
         session()->forget('user_id');
         return redirect("get-all-session");
-    });
+    });*/
+
+Route::get("/",[FrontendHomeController::class, "index"])->name("frontend.home");
+Route::get("/about",[FrontendAboutController::class, "index"])->name("frontend.about");
+Route::get("/services",[FrontendServicesController::class, "index"])->name("frontend.services");
+Route::get("/articles",[FrontendArticleController::class, "index"])->name("frontend.article");
+Route::get("/contact",[FrontendContactController::class, "index"])->name("frontend.contact");
+Route::get("/event",[FrontendEventController::class, "index"])->name("frontend.event");    
