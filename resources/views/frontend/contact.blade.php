@@ -144,7 +144,7 @@
 									<!-- Form Group -->
 									<div class="form-group col-lg-6 col-md-6 col-sm-12">
 										<span class="icon flaticon-user-4"></span>
-										<input type="text" name="username" placeholder="Enter Name" required>
+										{!! Form::text('username',"",["placeholder" => "Enter Name", "required"=>"required"]) !!}
 									</div>
 									
 									<!-- Form Group -->
