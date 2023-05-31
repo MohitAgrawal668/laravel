@@ -38,7 +38,7 @@ Route::resource("photo", PhotoController::class);
 
 Route::get("/register", [HomeController::class, 'form']);
 
-Route::post("/register", [HomeController::class, 'register']);
+Route::post("/register", [HomeController::class, 'register']);*/
 
 Route::get("/customer",[CustomerController::class,"index"])->name("customer.create");
 
@@ -54,7 +54,7 @@ Route::get("/customer/edit/{id}",[CustomerController::class, "edit"])->name("cus
 
 Route::get("/customer/restore/{id}",[CustomerController::class,"restore"])->name("customer.restore");
 
-Route::get("get-all-session",function(){
+/*Route::get("get-all-session",function(){
     print_r(session()->all());
 });
 

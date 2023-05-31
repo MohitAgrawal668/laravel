@@ -4,7 +4,29 @@
 @endpush
 
 @section("main-section")
-    <a href="{{route("customer.trash")}}"><button class="btn btn-info">Trash List</button></a>
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="get">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="text" value="{{ $search }}" name="search" id="" class="form-control" placeholder="Search Text Here" aria-describedby="helpId">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class='btn btn-info'>Search</button>
+                            <a href="{{url('customer/view')}}"><button type="button" class='btn btn-danger'>Reset</button></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <a href="{{route("customer.trash")}}"><button class="btn btn-info">Trash List</button></a>
+            </div>
+        </div>
+    </div>
+    
     <table class="table">
         <thead>
             <tr>
