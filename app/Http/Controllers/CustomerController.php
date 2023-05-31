@@ -41,11 +41,11 @@ class CustomerController extends Controller
             $search = $request['search'] ?? "";
             if($search!="")
                 {
-                    $customers = Customers::where("name","like","%$search%")->orWhere("email","like","%$search%")->get();
+                    $customers = Customers::where("name","like","%$search%")->orWhere("email","like","%$search%")->paginate(20);
                 }
             else
                 {
-                    $customers = Customers::all();
+                    $customers = Customers::paginate(20);
                 }    
             $data = compact("customers","search");
             return view("customer_view")->with($data);
