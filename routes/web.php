@@ -52,6 +52,7 @@ Route::group(["prefix" => "/customer"],function(){
     Route::post("/update/{id}",[CustomerController::class, "update"])->name("customer.update");
     Route::get("/edit/{id}",[CustomerController::class, "edit"])->name("customer.edit");
     Route::get("/restore/{id}",[CustomerController::class,"restore"])->name("customer.restore");
+    Route::get("/choose-lang/{lang}",[CustomerController::class,"chooselang"])->name("customer.chooseLang");
 });
 
 /*Route::get("get-all-session",function(){

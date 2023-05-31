@@ -1,11 +1,14 @@
 @extends("layouts.main")
 @push('title')
-    <title>Customer List</title>
+    <title>Customers List</title>
 @endpush
 
 @section("main-section")
     <div class="container" style="margin-top:20px;">
         <div class="row">
+            <div class="col-md-12">
+                <h2>@lang("lang.customer")</h2>
+            </div>
             <div class="col-md-6">
                 <form action="" method="get">
                     <div class="row">

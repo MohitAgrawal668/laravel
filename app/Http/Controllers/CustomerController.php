@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class CustomerController extends Controller
 {
@@ -103,7 +104,7 @@ class CustomerController extends Controller
                     return view("create_customer")->with($data);
                 }        
         } 
-        public function update($id, Request $request)
+    public function update($id, Request $request)
         {   
             
             $customer = Customers::find($id);
@@ -116,5 +117,10 @@ class CustomerController extends Controller
             $customer->save();
 
             return redirect("/customer/view");
-        }             
+        }
+    public function chooseLang($lang)
+        {
+            App::setLocale($lang);
+            return view("welcome");
+        }                  
 }
