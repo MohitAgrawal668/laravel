@@ -1,10 +1,9 @@
 @extends("layouts.main")
 @push('title')
-    <title>Customer List</title>
+    <title>Customer Trash List</title>
 @endpush
 
 @section("main-section")
-    <a href="{{route("customer.trash")}}"><button class="btn btn-info">Trash List</button></a>
     <table class="table">
         <thead>
             <tr>
@@ -34,8 +33,8 @@
                         @endif    
                     </td>
                     <td>
-                        <a href="{{ route('customer.delete', ['id' => $customer->id ]) }}"><button class="btn btn-danger">Trash</button></a>
-                        <a href="{{ route('customer.edit', ['id' => $customer->id ]) }}"><button class="btn btn-info">Edit</button></a>
+                        <a href="{{ route('customer.delete', ['id' => $customer->id ]) }}"><button class="btn btn-danger">Delete</button></a>
+                        <a href="{{ route('customer.edit', ['id' => $customer->id ]) }}"><button class="btn btn-info">Restore</button></a>
                     </td>
                 </tr>
             @endforeach

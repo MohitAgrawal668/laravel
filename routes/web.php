@@ -35,6 +35,7 @@ Route::get("/customer",[CustomerController::class,"index"])->name("customer.crea
 Route::post("/customer",[CustomerController::class,"store"]);
 
 Route::get("/customer/view",[CustomerController::class, "view"])->name("customer.view");
+Route::get("/customer/trash",[CustomerController::class, "trash"])->name("customer.trash");
 
 Route::get("/customer/delete/{id}",[CustomerController::class, "delete"])->name("customer.delete");
 Route::post("/customer/update/{id}",[CustomerController::class, "update"])->name("customer.update");

@@ -41,7 +41,15 @@ class CustomerController extends Controller
             $customers = Customers::all();
             $data = compact("customers");
             return view("customer_view")->with($data);
-        }  
+        } 
+        
+    public function trash()
+        {
+            $customers = Customers::onlyTrashed()->get();
+            $data = compact('customers');
+            return view("customer_trash_view")->with($data);
+        } 
+        
     public function delete($id)
         {
             $customer = Customers::find($id);
