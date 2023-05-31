@@ -14,6 +14,7 @@ class ContactController extends Controller
 
     public function upload(Request $request)
         {
-            $request->file("upload-file")->store('uploads');
+            $filename = time()."-mohit.".$request->file("upload-file")->getClientOriginalExtension();
+            $request->file("upload-file")->storeAs('uploads', $filename);
         }    
 }
