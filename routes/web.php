@@ -78,3 +78,9 @@ Route::get("/services",[FrontendServicesController::class, "index"])->name("fron
 Route::get("/articles",[FrontendArticleController::class, "index"])->name("frontend.article");
 Route::get("/contact",[FrontendContactController::class, "index"])->name("frontend.contact");
 Route::get("/event",[FrontendEventController::class, "index"])->name("frontend.event");    
+
+Route::get("/upload-form",function(){
+    return view("frontend.upload-form");
+});
+
+Route::post("/upload",[FrontendContactController::class,"upload"])->name('frontend.upload');

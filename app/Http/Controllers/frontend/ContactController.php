@@ -11,4 +11,9 @@ class ContactController extends Controller
         {   
             return view("frontend.contact");   
         }
+
+    public function upload(Request $request)
+        {
+            $request->file("upload-file")->store('uploads');
+        }    
 }
