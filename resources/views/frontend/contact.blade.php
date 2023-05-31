@@ -133,7 +133,12 @@
 						
 						<!-- Contact Form -->
 						<div class="contact-form">
-							<form method="post" action="https://html.themexriver.com/avarton/blog.html">
+							{!! Form::open([
+								"method" => "post",
+								"url" => "https://html.themexriver.com/avarton/blog.html",
+								"id" => "contact-form",
+								"enctype" => "multipart/form-data"
+							]) !!}
 								<div class="row clearfix">
 								
 									<!-- Form Group -->
@@ -172,7 +177,7 @@
 									</div>
 									
 								</div>
-							</form>
+							{!! Form::close() !!}
 								
 						</div>
 						<!-- eND Contact Form -->
