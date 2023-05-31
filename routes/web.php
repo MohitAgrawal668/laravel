@@ -40,19 +40,19 @@ Route::get("/register", [HomeController::class, 'form']);
 
 Route::post("/register", [HomeController::class, 'register']);*/
 
-Route::get("/customer",[CustomerController::class,"index"])->name("customer.create");
 
-Route::post("/customer",[CustomerController::class,"store"]);
 
-Route::get("/customer/view",[CustomerController::class, "view"])->name("customer.view");
-Route::get("/customer/trash",[CustomerController::class, "trash"])->name("customer.trash");
-
-Route::get("/customer/delete/{id}",[CustomerController::class, "delete"])->name("customer.delete");
-Route::get("/customer/force-elete/{id}",[CustomerController::class, "forceDelete"])->name("customer.force_delete");
-Route::post("/customer/update/{id}",[CustomerController::class, "update"])->name("customer.update");
-Route::get("/customer/edit/{id}",[CustomerController::class, "edit"])->name("customer.edit");
-
-Route::get("/customer/restore/{id}",[CustomerController::class,"restore"])->name("customer.restore");
+Route::group(["prefix" => "/customer"],function(){
+    Route::get("",[CustomerController::class,"index"])->name("customer.create");
+    Route::post("",[CustomerController::class,"store"]);
+    Route::get("/view",[CustomerController::class, "view"])->name("customer.view");
+    Route::get("/trash",[CustomerController::class, "trash"])->name("customer.trash");
+    Route::get("/delete/{id}",[CustomerController::class, "delete"])->name("customer.delete");
+    Route::get("/force-elete/{id}",[CustomerController::class, "forceDelete"])->name("customer.force_delete");
+    Route::post("/update/{id}",[CustomerController::class, "update"])->name("customer.update");
+    Route::get("/edit/{id}",[CustomerController::class, "edit"])->name("customer.edit");
+    Route::get("/restore/{id}",[CustomerController::class,"restore"])->name("customer.restore");
+});
 
 /*Route::get("get-all-session",function(){
     print_r(session()->all());
