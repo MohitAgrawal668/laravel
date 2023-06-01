@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 
@@ -85,3 +86,5 @@ Route::get("/upload-form",function(){
 });
 
 Route::post("/upload",[FrontendContactController::class,"upload"])->name('frontend.upload');
+
+Route::get("/client",[ClientController::class, "index"])->name("client.index");
