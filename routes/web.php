@@ -91,7 +91,7 @@ Route::post("/upload",[FrontendContactController::class,"upload"])->name('fronte
 Route::get("/client",[ClientController::class, "index"])->name("client.index");
 
 Route::get("/company",[CompanyController::class, "index"])->name("company.index")->middleware('guard');
-Route::get("/client-group",[ClientController::class, 'group'])->name("client.group");
+Route::get("/client-group",[ClientController::class, 'group'])->name("client.group")->middleware('guard2');
 Route::get("/no_access",[CompanyController::class,"no_access"]);
 Route::get("/login",function(){
     session()->put('user_id','1234');
