@@ -44,8 +44,8 @@ Route::post("/register", [HomeController::class, 'register']);*/
 
 
 
-Route::middleware(['guard2'])->group(function(){
-    Route::get("/customer",[CustomerController::class,"index"])->name("customer.create");
+Route::group(["prefix" => "/customer"],function(){
+    Route::get("",[CustomerController::class,"index"])->name("customer.create");
     Route::post("",[CustomerController::class,"store"]);
     Route::get("/view",[CustomerController::class, "view"])->name("customer.view");
     Route::get("/trash",[CustomerController::class, "trash"])->name("customer.trash");
