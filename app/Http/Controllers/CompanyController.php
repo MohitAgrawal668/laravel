@@ -11,5 +11,8 @@ class CompanyController extends Controller
         {
             return CompanyAddress::with("getCompany")->get();
         }
-        
+    public function no_access()
+        {
+            return view("no_access");
+        }    
 }

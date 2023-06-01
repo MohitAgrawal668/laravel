@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class WebGuard
+class RouteWebGuard
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,13 @@ class WebGuard
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if(session()->has('user_id'))
+            {
+                return $next($request);
+            }
+        else
+            {
+                return redirect('no_access');
+            }    
     }
 }
