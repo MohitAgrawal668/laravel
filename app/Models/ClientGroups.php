@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ClientGroups extends Model
 {
     use HasFactory;
+
+    function getClients()
+        {
+            return $this->hasMany("App\Models\Clients","group_id","id");
+        }
 }

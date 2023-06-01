@@ -11,4 +11,5 @@ class CompanyController extends Controller
         {
             return CompanyAddress::with("getCompany")->get();
         }
+        
 }

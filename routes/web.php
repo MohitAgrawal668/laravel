@@ -91,3 +91,4 @@ Route::post("/upload",[FrontendContactController::class,"upload"])->name('fronte
 Route::get("/client",[ClientController::class, "index"])->name("client.index");
 
 Route::get("/company",[CompanyController::class, "index"])->name("company.index");
+Route::get("/client-group",[ClientController::class, 'group'])->name("client.group");
