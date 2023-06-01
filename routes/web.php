@@ -96,3 +96,7 @@ Route::get("/no_access",[CompanyController::class,"no_access"]);
 Route::get("/login",function(){
     session()->put('user_id','1234');
 });
+
+Route::get("/logout",function(){
+    session()->forget('user_id');
+});
