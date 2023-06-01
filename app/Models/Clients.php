@@ -10,6 +10,6 @@ class Clients extends Model
     use HasFactory;
     function getGroup()
         {
-            return $this->hasOne('App\Models\ClientGroups','id');
+            return $this->hasMany('App\Models\ClientGroups','id', 'group_id');
         }
 }
